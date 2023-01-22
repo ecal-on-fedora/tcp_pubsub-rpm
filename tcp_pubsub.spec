@@ -14,7 +14,8 @@ License: MIT
 BuildRequires: g++
 BuildRequires: cmake
 BuildRequires: asio-devel
-BuildRequires: recycle
+BuildRequires: recycle-devel
+
 
 %description
 tcp_pubsub is a minimal publish-subscribe library that transports data via TCP. The project is CMake based. The dependencies are integrated as git submodules. In your own Project you can either use those submodules as well, or provide the dependencies in your own manner.
@@ -59,9 +60,12 @@ Eclipse tcp_pubsub library files
 %{_includedir}/tcp_pubsub/tcp_pubsub_version.h
 %{_prefix}/lib/cmake/tcp_pubsub/tcp_pubsubConfig.cmake
 %{_prefix}/lib/cmake/tcp_pubsub/tcp_pubsubTargets.cmake
+%{_prefix}/lib/cmake/tcp_pubsub/tcp_pubsubTargets-release.cmake
 
 %files libs
-%{_libdir}/libtcp_pubsub.a
+%{_prefix}/lib/libtcp_pubsub.so.1.0.3
+%{_prefix}/lib/libtcp_pubsub.so.1
+%{_prefix}/lib/libtcp_pubsub.so
 
 %files
 %license LICENSE
