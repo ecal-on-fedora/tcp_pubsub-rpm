@@ -5,7 +5,7 @@
 
 Name:    tcp_pubsub
 Version: 1.0.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A minimal publish-subscribe library that transports data via TCP
 URL:     %{forgeurl}
 Source:  %{forgesource}
@@ -24,6 +24,7 @@ tcp_pubsub does not define a message format but only transports binary blobs. It
 
 %package devel
 Summary: Eclipse tcp_pubsub header and cmake development files
+Requires: %{name}-libs
 
 %description devel
 Eclipse tcp_pubsub header and cmake development files
@@ -72,5 +73,8 @@ Eclipse tcp_pubsub library files
 %doc README.md
 
 %changelog
+* Mon Jan 23 2023 Leonardo Rossetti <lrossett@redhat.com> - 1.0.3-2
+- Adding dependency between devel and libs sub-packages
+
 * Sat Jan 21 2023 Leonardo Rossetti <lrossett@redhat.com> - 1.0.3-1
 - First version being packaged
